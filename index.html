@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f7f4ed">
+<title>2026 경주 가족여행 · 3박 4일</title>
+<style>
+:root{--bg:#f7f4ed;--paper:#fff;--ink:#25241f;--muted:#77736a;--line:#ded8cb;--accent:#775b3b;--soft:#f0eadf;--food:#fff5e8;--spot:#eef5ed;--hotel:#f0eff8}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;line-height:1.55}
+.wrap{max-width:920px;margin:auto;padding:24px 16px 80px}
+.hero{padding:28px 4px 20px} .hero h1{font-size:clamp(28px,6vw,48px);line-height:1.08;margin:8px 0} .hero p{color:var(--muted);margin:4px 0}
+.tabs{position:sticky;top:0;z-index:20;display:flex;gap:8px;overflow:auto;padding:10px 0;background:rgba(247,244,237,.95);backdrop-filter:blur(10px)}
+.tabs button{white-space:nowrap;border:1px solid var(--line);background:var(--paper);padding:10px 14px;border-radius:999px;font-size:15px;cursor:pointer}
+.tabs button.active{background:var(--ink);color:white;border-color:var(--ink)}
+.day{margin:26px 0 42px} .dayhead{display:flex;justify-content:space-between;gap:12px;align-items:end;margin-bottom:18px} .dayhead b{color:var(--accent)} .dayhead h2{font-size:25px;margin:1px 0} .dayhead span{color:var(--muted);font-size:13px;text-align:right}
+.timeline{position:relative} .timeline:before{content:"";position:absolute;left:72px;top:12px;bottom:12px;width:2px;background:var(--line)}
+.event{display:grid;grid-template-columns:58px 28px 1fr;gap:8px;position:relative;margin:0 0 13px} .time{font-weight:800;font-size:14px;padding-top:14px;text-align:right}
+.dot{z-index:2;width:28px;height:28px;margin-top:10px;border-radius:50%;background:var(--paper);border:1px solid var(--line);display:grid;place-items:center;font-size:14px}
+.eventbody{background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:13px 14px} .event.food .eventbody{background:var(--food)} .event.spot .eventbody{background:var(--spot)} .event.hotel .eventbody{background:var(--hotel)}
+.eventhead{display:flex;align-items:center;justify-content:space-between;gap:10px} .event h3{font-size:17px;margin:0} .event p{font-size:14px;margin:5px 0 0;color:#56534d}
+.mapbtn{font-size:12px;text-decoration:none;color:var(--accent);border:1px solid #d5c7b3;padding:5px 8px;border-radius:9px;background:#fff;white-space:nowrap}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:18px;margin:28px 0} .panel h2{margin:0 0 12px}
+.callout{background:#fff7d8;border:1px solid #e7d995;border-radius:14px;padding:14px;margin:12px 0;font-size:14px}
+.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:14px} table{border-collapse:collapse;width:100%;min-width:1050px;background:#fff} th,td{padding:11px;border-bottom:1px solid #eee8dc;text-align:left;vertical-align:top;font-size:13px} th{position:sticky;top:0;background:#f3eee5;z-index:2} td a{color:var(--accent);font-weight:700}
+.checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px} .checks label{background:#fff;border:1px solid var(--line);padding:11px;border-radius:11px;font-size:14px} input{transform:scale(1.15);margin-right:8px}
+.legend{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:12px;margin:8px 0 4px}
+.note{font-size:12px;color:var(--muted)} .hidden{display:none!important}
+@media(max-width:560px){.dayhead{display:block}.dayhead span{display:block;text-align:left;margin-top:4px}.timeline:before{left:59px}.event{grid-template-columns:46px 26px 1fr;gap:6px}.time{font-size:12px}.eventbody{padding:12px}.checks{grid-template-columns:1fr}}
+@media print{body{background:white}.tabs,.mapbtn{display:none}.wrap{max-width:none}.day{break-inside:avoid}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="hero">
+  <div>🏯 FAMILY TRIP · GYEONGJU</div>
+  <h1>2026 경주 가족여행<br>3박 4일</h1>
+  <p>10/2(금) ~ 10/5(월) · 아빠·엄마·초5·초2 · 자가용</p>
+  <p>신라 역사 체험 × 경주 맛집 × 아이 미션</p>
+  <div class="legend"><span>🍚 식사</span><span>🏛️ 관광</span><span>🏨 숙소</span><span>📍 버튼 = Google Maps</span></div>
+</header>
+
+<nav class="tabs" aria-label="날짜 필터">
+<button class="active" data-filter="all">전체</button>
+<button data-filter="d1">10/2 금</button>
+<button data-filter="d2">10/3 토</button>
+<button data-filter="d3">10/4 일</button>
+<button data-filter="d4">10/5 월</button>
+<button data-filter="restaurants">🍽️ 식당정보</button>
+</nav>
+
+<div id="days">
+    <section class="day" data-day="d1">
+      <div class="dayhead"><div><b>10/2 금</b><h2>수원 → 경주</h2></div><span>여행 시작 · 한화리조트 1박차</span></div>
+      <div class="timeline">
+        <article class="event travel">
+          <div class="time">06:00</div>
+          <div class="dot">🚗</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>수원 출발</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%EC%98%81%ED%86%B5%EC%95%84%EC%9D%B4%ED%8C%8C%ED%81%AC%EC%BA%90%EC%8A%AC" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>아침은 생략. 경부고속도로로 경주 직행. 휴게소는 커피·화장실 정도.</p>
+          </div>
+        </article>
+        <article class="event food">
+          <div class="time">11:00</div>
+          <div class="dot">🍚</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>산해식당</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%EC%82%B0%ED%95%B4%EC%8B%9D%EB%8B%B9%20%EA%B2%BD%EC%A3%BC" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>경주 첫 끼. 청국장·된장찌개 중심, 저녁이 한우라 석쇠구이는 가볍게.</p>
+          </div>
+        </article>
+        <article class="event spot">
+          <div class="time">12:30</div>
+          <div class="dot">🌳</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>보문호 산책</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%EA%B2%BD%EC%A3%BC%20%EB%B3%B4%EB%AC%B8%ED%98%B8" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>가족 미션: 이번 여행에서 신라시대 물건이나 건물 10개 찾아보기.</p>
+          </div>
+        </article>
+        <article class="event hotel">
+          <div class="time">14:30</div>
+          <div class="dot">🏨</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>한화리조트 체크인</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%ED%95%9C%ED%99%94%EB%A6%AC%EC%A1%B0%ED%8A%B8%20%EA%B2%BD%EC%A3%BC" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>15:00~17:00 휴식. 첫날부터 무리하지 않기.</p>
+          </div>
+        </article>
+        <article class="event food">
+          <div class="time">17:30</div>
+          <div class="dot">🥩</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>영양숯불갈비</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%EC%98%81%EC%96%91%EC%88%AF%EB%B6%88%EA%B0%88%EB%B9%84%20%EA%B2%BD%EC%A3%BC" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>지정맛집 ①. 한우 갈비살 양념구이 + 생갈비살. 아이들은 양념부터.</p>
+          </div>
+        </article>
+        <article class="event hotel">
+          <div class="time">19:30</div>
+          <div class="dot">🌙</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>한화리조트 복귀</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%ED%95%9C%ED%99%94%EB%A6%AC%EC%A1%B0%ED%8A%B8%20%EA%B2%BD%EC%A3%BC" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>보문호 야경 정도만 보고 휴식.</p>
+          </div>
+        </article></div>
+    </section>
+    <section class="day" data-day="d2">
+      <div class="dayhead"><div><b>10/3 토</b><h2>불국사 · 석굴암</h2></div><span>신라 불교문화 DAY</span></div>
+      <div class="timeline">
+        <article class="event meal">
+          <div class="time">07:40</div>
+          <div class="dot">☕</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>가벼운 아침</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%ED%95%9C%ED%99%94%EB%A6%AC%EC%A1%B0%ED%8A%B8%20%EA%B2%BD%EC%A3%BC" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>빵 + 바나나/요거트 + 우유/커피. 배부르게 먹지 않기.</p>
+          </div>
+        </article>
+        <article class="event spot">
+          <div class="time">09:00</div>
+          <div class="dot">🛕</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>불국사</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%EB%B6%88%EA%B5%AD%EC%82%AC" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>아이 미션: 석가탑 vs 다보탑 비교. 10원짜리 동전의 다보탑을 실제 탑과 비교하기.</p>
+          </div>
+        </article>
+        <article class="event spot">
+          <div class="time">10:40</div>
+          <div class="dot">🚗</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>석굴암 이동</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%EC%84%9D%EA%B5%B4%EC%95%94" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>11:00 관람 목표. 석굴암은 자연동굴이 아니라 돌을 쌓아 만든 인공 석굴.</p>
+          </div>
+        </article>
+        <article class="event food">
+          <div class="time">12:30</div>
+          <div class="dot">🍚</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>경춘재</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%EA%B2%BD%EC%B6%98%EC%9E%AC%20%EA%B2%BD%EC%A3%BC" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>비빔밥·한식. 불국사권에서 해결해 불필요한 이동 줄이기.</p>
+          </div>
+        </article>
+        <article class="event hotel">
+          <div class="time">14:00</div>
+          <div class="dot">🏨</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>한화리조트 복귀</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%ED%95%9C%ED%99%94%EB%A6%AC%EC%A1%B0%ED%8A%B8%20%EA%B2%BD%EC%A3%BC" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>14:00~16:30 휴식. 문화재 일정 추가하지 않기.</p>
+          </div>
+        </article>
+        <article class="event food">
+          <div class="time">17:30</div>
+          <div class="dot">🐷</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>알찬참숯뒷고기</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%EC%95%8C%EC%B0%AC%EC%B0%B8%EC%88%AF%EB%92%B7%EA%B3%A0%EA%B8%B0%20%EA%B2%BD%EC%A3%BC" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>지정맛집 ②. 참숯 뒷고기. 토요일 저녁 사전 확인.</p>
+          </div>
+        </article>
+        <article class="event hotel">
+          <div class="time">19:30</div>
+          <div class="dot">🌙</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>숙소 복귀</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%ED%95%9C%ED%99%94%EB%A6%AC%EC%A1%B0%ED%8A%B8%20%EA%B2%BD%EC%A3%BC" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>다음 날 많이 걷는 날이므로 휴식.</p>
+          </div>
+        </article></div>
+    </section>
+    <section class="day" data-day="d3">
+      <div class="dayhead"><div><b>10/4 일</b><h2>신라 핵심 DAY</h2></div><span>대릉원 · 박물관 · 황리단길 · 야경</span></div>
+      <div class="timeline">
+        <article class="event meal">
+          <div class="time">08:00</div>
+          <div class="dot">☕</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>가벼운 아침</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%ED%95%9C%ED%99%94%EB%A6%AC%EC%A1%B0%ED%8A%B8%20%EA%B2%BD%EC%A3%BC" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>빵·요거트·커피 정도. 오늘 먹을 게 많음.</p>
+          </div>
+        </article>
+        <article class="event hotel">
+          <div class="time">09:00</div>
+          <div class="dot">🧳</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>한화리조트 체크아웃</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%ED%95%9C%ED%99%94%EB%A6%AC%EC%A1%B0%ED%8A%B8%20%EA%B2%BD%EC%A3%BC" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>짐 싣고 대릉원으로 이동.</p>
+          </div>
+        </article>
+        <article class="event spot">
+          <div class="time">09:30</div>
+          <div class="dot">👑</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>대릉원 · 천마총</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%EB%8C%80%EB%A6%89%EC%9B%90%20%EC%B2%9C%EB%A7%88%EC%B4%9D" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>천마총은 왕 이름이 아님. 출토된 말다래의 천마 그림에서 붙은 이름. 무덤 주인은 확정되지 않음.</p>
+          </div>
+        </article>
+        <article class="event spot">
+          <div class="time">11:00</div>
+          <div class="dot">🌌</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>첨성대</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%EC%B2%A8%EC%84%B1%EB%8C%80" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>아이 질문: 망원경도 없던 신라 사람들은 별을 어떻게 관찰했을까?</p>
+          </div>
+        </article>
+        <article class="event spot">
+          <div class="time">11:20</div>
+          <div class="dot">🌳</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>계림</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%EA%B2%BD%EC%A3%BC%20%EA%B3%84%EB%A6%BC" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>역사 설명은 잠시 쉬고 숲길 산책.</p>
+          </div>
+        </article>
+        <article class="event spot">
+          <div class="time">11:40</div>
+          <div class="dot">🌉</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>월정교</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%EC%9B%94%EC%A0%95%EA%B5%90" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>사진: 조금 떨어져 월정교 전체 + 가족이 나오게.</p>
+          </div>
+        </article>
+        <article class="event food">
+          <div class="time">12:20</div>
+          <div class="dot">🍚</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>한다솥 경주점</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%ED%95%9C%EB%8B%A4%EC%86%A5%20%EA%B2%BD%EC%A3%BC%EC%A0%90" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>지정맛집 ③. 솥밥. 일요일 점심 웨이팅 확인.</p>
+          </div>
+        </article>
+        <article class="event spot">
+          <div class="time">13:40</div>
+          <div class="dot">🏛️</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>국립경주박물관</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%EA%B5%AD%EB%A6%BD%EA%B2%BD%EC%A3%BC%EB%B0%95%EB%AC%BC%EA%B4%80" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>꼭 보기: 얼굴무늬 수막새, 성덕대왕신종, 신라 금관. 수막새 얼굴은 기억만 시키고 신라당 이야기는 비밀!</p>
+          </div>
+        </article>
+        <article class="event hotel">
+          <div class="time">15:30</div>
+          <div class="dot">🏨</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>브릭스테이 체크인</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%EB%B8%8C%EB%A6%AD%EC%8A%A4%ED%85%8C%EC%9D%B4%20%EA%B2%BD%EC%A3%BC%20%ED%99%A9%EB%A6%AC%EB%8B%A8%EA%B8%B8" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>이후 황리단길은 가능하면 도보 이동.</p>
+          </div>
+        </article>
+        <article class="event food">
+          <div class="time">16:00</div>
+          <div class="dot">🥪</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>이치니산도</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%EC%9D%B4%EC%B9%98%EB%8B%88%EC%82%B0%EB%8F%84%20%EA%B2%BD%EC%A3%BC" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>지정맛집 ④. 산도 1~2개만 사서 네 명이 나눠먹기.</p>
+          </div>
+        </article>
+        <article class="event food">
+          <div class="time">16:30</div>
+          <div class="dot">🍰</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>신라당 경주</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%EC%8B%A0%EB%9D%BC%EB%8B%B9%20%EA%B2%BD%EC%A3%BC" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>지정맛집 ⑤. 수막새 티라미수 공개! &#x27;아까 박물관에서 이 얼굴 어디서 봤지?&#x27;</p>
+          </div>
+        </article>
+        <article class="event food">
+          <div class="time">17:20</div>
+          <div class="dot">🍚</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>향택경주</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%ED%96%A5%ED%83%9D%EA%B2%BD%EC%A3%BC" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>지정맛집 ⑥. 대표메뉴 2~3개 정도만 나눠먹기.</p>
+          </div>
+        </article>
+        <article class="event spot">
+          <div class="time">18:20</div>
+          <div class="dot">🌙</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>동궁과 월지</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%EB%8F%99%EA%B6%81%EA%B3%BC%20%EC%9B%94%EC%A7%80" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>야경. 건물 + 연못 + 물에 비친 건물을 한 프레임에. 옛 이름으로 안압지라고 많이 불렸음.</p>
+          </div>
+        </article>
+        <article class="event food">
+          <div class="time">19:35</div>
+          <div class="dot">🍜</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>온목당</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%EC%98%A8%EB%AA%A9%EB%8B%B9%20%EA%B2%BD%EC%A3%BC" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>지정맛집 ⑦. 곰탕 1~2개 + 냉수육. LO 20:00 기준이라 늦지 않게 도착.</p>
+          </div>
+        </article>
+        <article class="event hotel">
+          <div class="time">21:00</div>
+          <div class="dot">🏨</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>브릭스테이 복귀</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%EB%B8%8C%EB%A6%AD%EC%8A%A4%ED%85%8C%EC%9D%B4%20%EA%B2%BD%EC%A3%BC%20%ED%99%A9%EB%A6%AC%EB%8B%A8%EA%B8%B8" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>지정맛집 7곳 방문 완료.</p>
+          </div>
+        </article></div>
+    </section>
+    <section class="day" data-day="d4">
+      <div class="dayhead"><div><b>10/5 월</b><h2>양동마을 → 수원</h2></div><span>신라에서 조선으로 시간점프</span></div>
+      <div class="timeline">
+        <article class="event food">
+          <div class="time">08:30</div>
+          <div class="dot">☕</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>Nerd</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Nerd%20%EA%B2%BD%EC%A3%BC%20%EC%9B%90%ED%9A%A8%EB%A1%9C%20101-1" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>가벼운 브런치. 브런치 2개 정도 + 음료를 네 명이 나눠먹기.</p>
+          </div>
+        </article>
+        <article class="event hotel">
+          <div class="time">09:20</div>
+          <div class="dot">🧳</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>브릭스테이 체크아웃</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%EB%B8%8C%EB%A6%AD%EC%8A%A4%ED%85%8C%EC%9D%B4%20%EA%B2%BD%EC%A3%BC%20%ED%99%A9%EB%A6%AC%EB%8B%A8%EA%B8%B8" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>양동마을로 이동.</p>
+          </div>
+        </article>
+        <article class="event spot">
+          <div class="time">10:00</div>
+          <div class="dot">🏠</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>양동마을</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%EA%B2%BD%EC%A3%BC%20%EC%96%91%EB%8F%99%EB%A7%88%EC%9D%84" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>신라에서 조선으로 시간점프. 아이 미션: 기와집과 초가집 차이 3개 찾기.</p>
+          </div>
+        </article>
+        <article class="event travel">
+          <div class="time">11:40</div>
+          <div class="dot">🚗</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>수원 출발</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%EC%98%81%ED%86%B5%EC%95%84%EC%9D%B4%ED%8C%8C%ED%81%AC%EC%BA%90%EC%8A%AC" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>13:00~14:00 이동 상황에 맞춰 점심 + 휴식.</p>
+          </div>
+        </article>
+        <article class="event travel">
+          <div class="time">17:00</div>
+          <div class="dot">🏠</div>
+          <div class="eventbody">
+            <div class="eventhead"><h3>수원 도착 예정</h3><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=%EC%98%81%ED%86%B5%EC%95%84%EC%9D%B4%ED%8C%8C%ED%81%AC%EC%BA%90%EC%8A%AC" target="_blank" rel="noopener">📍 지도</a></div>
+            <p>3박 4일 여행 종료.</p>
+          </div>
+        </article></div>
+    </section></div>
+
+<section class="panel" id="parents">
+<h2>👨‍👩‍👦‍👦 엄마·아빠가 이것만 알고 가기</h2>
+<div class="callout"><b>🛕 불국사</b> · 석가탑 vs 다보탑 → 10원짜리 동전은 다보탑.</div>
+<div class="callout"><b>🗿 석굴암</b> · 자연동굴이 아니라 사람이 돌을 쌓아 만든 인공 석굴.</div>
+<div class="callout"><b>👑 천마총</b> · 왕 이름이 아니라 천마 그림에서 붙은 이름. 무덤 주인은 정확히 확정되지 않음.</div>
+<div class="callout"><b>😊 국립경주박물관 → 🍰 신라당</b> · 얼굴무늬 수막새를 먼저 보여준 뒤 수막새 티라미수를 공개. 아이들에게 미리 말하지 않기!</div>
+<div class="callout"><b>🌙 동궁과 월지</b> · 엄마·아빠 세대에 '안압지'로 익숙한 곳. 연못 반영 사진 찍기.</div>
+<div class="callout"><b>🏠 양동마을</b> · 앞의 여행은 주로 신라 → 여기서는 조선으로 시간점프. 기와집 vs 초가집 비교.</div>
+</section>
+
+<section class="panel" id="restaurants">
+<h2>🍽️ 식당 영업정보</h2>
+<p class="note">2026-09-23 검색 기준. 임시휴무·연휴 영업은 변동될 수 있으므로 출발 2~3일 전 전화 확인 권장. 특히 산해식당은 최근 조회 화면에 특정 날짜 휴무 표시가 있어 10/2 방문 전 확인 필수.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>일정</th><th>식당</th><th>종류</th><th>영업시간</th><th>휴무</th><th>전화</th><th>확인</th><th>추천</th></tr></thead>
+<tbody><tr>
+      <td><b>10/2 아점</b></td><td><b>산해식당</b></td><td>로컬 한식</td>
+      <td>11:00~20:30 · BT 15:30~17:00 · LO 20:00</td><td>최근 조회상 9/23~25 휴무 표시 → 10/2 임시휴무 여부 반드시 전화 확인</td>
+      <td><a href="tel:0547437791">054-743-7791</a></td><td>예약/영업 확인</td><td>⭐⭐⭐⭐⭐</td>
+    </tr><tr>
+      <td><b>10/2 저녁</b></td><td><b>영양숯불갈비</b></td><td>한우</td>
+      <td>금 10:30~15:00 / 17:00~21:00 · LO 20:30</td><td>설·추석 당일</td>
+      <td><a href="tel:0547712627">054-771-2627</a></td><td>웨이팅 확인</td><td>⭐⭐⭐⭐⭐</td>
+    </tr><tr>
+      <td><b>10/3 점심</b></td><td><b>경춘재</b></td><td>한식</td>
+      <td>08:00~16:00</td><td>화요일 휴무로 등록</td>
+      <td><a href="tel:0547464750">054-746-4750</a></td><td>주말 확인</td><td>⭐⭐⭐⭐½</td>
+    </tr><tr>
+      <td><b>10/3 저녁</b></td><td><b>알찬참숯뒷고기</b></td><td>돼지고기</td>
+      <td>16:00~24:00</td><td>현재 등록상 매일 영업</td>
+      <td><a href="tel:0547431118">054-743-1118</a></td><td>전화 확인</td><td>⭐⭐⭐⭐½</td>
+    </tr><tr>
+      <td><b>10/4 점심</b></td><td><b>한다솥 경주점</b></td><td>솥밥</td>
+      <td>10:30~21:00 · LO 20:00</td><td>현재 등록상 연중무휴</td>
+      <td><a href="tel:050713217088">0507-1321-7088</a></td><td>웨이팅 확인</td><td>⭐⭐⭐⭐⭐</td>
+    </tr><tr>
+      <td><b>10/4 간식</b></td><td><b>이치니산도</b></td><td>산도</td>
+      <td>일 11:30~20:00</td><td>현재 등록상 매일 영업</td>
+      <td><a href="tel:0547451006">054-745-1006</a></td><td>현장 방문</td><td>⭐⭐⭐⭐</td>
+    </tr><tr>
+      <td><b>10/4 카페</b></td><td><b>신라당 경주</b></td><td>디저트</td>
+      <td>10:00~21:00 · LO 20:30</td><td>현재 등록상 매일 영업</td>
+      <td><a href="tel:050713653249">0507-1365-3249</a></td><td>주말 웨이팅 가능</td><td>⭐⭐⭐⭐⭐</td>
+    </tr><tr>
+      <td><b>10/4 이른저녁</b></td><td><b>향택경주</b></td><td>한식</td>
+      <td>11:00~20:00</td><td>수요일 휴무</td>
+      <td><a href="tel:050714591532">0507-1459-1532</a></td><td>대기 확인</td><td>⭐⭐⭐⭐⭐</td>
+    </tr><tr>
+      <td><b>10/4 야식</b></td><td><b>온목당</b></td><td>곰탕·냉수육</td>
+      <td>11:00~21:30 · BT 15:00~17:00 · LO 20:00</td><td>현재 등록상 매일 영업</td>
+      <td><a href="tel:050713639861">0507-1363-9861</a></td><td>LO 특히 주의</td><td>⭐⭐⭐⭐⭐</td>
+    </tr><tr>
+      <td><b>10/5 아침</b></td><td><b>Nerd</b></td><td>브런치</td>
+      <td>08:30~16:00 · LO 15:00</td><td>화·수 휴무</td>
+      <td><a href="tel:050714478084">0507-1447-8084</a></td><td>웨이팅 확인</td><td>⭐⭐⭐⭐½</td>
+    </tr></tbody>
+</table></div>
+</section>
+
+<section class="panel" id="checklist">
+<h2>🎒 출발 전 체크</h2>
+<div class="checks">
+<label><input type="checkbox">10원짜리 동전 챙기기</label>
+<label><input type="checkbox">영양숯불갈비 확인</label>
+<label><input type="checkbox">산해식당 10/2 영업 확인</label>
+<label><input type="checkbox">알찬뒷고기 토요일 확인</label>
+<label><input type="checkbox">한다솥 일요일 웨이팅 확인</label>
+<label><input type="checkbox">향택 대기 확인</label>
+<label><input type="checkbox">온목당 LO 20:00 재확인</label>
+<label><input type="checkbox">박물관 운영시간 최종 확인</label>
+</div>
+</section>
+</main>
+<script>
+(() => {
+ const tabs=[...document.querySelectorAll('[data-filter]')];
+ const days=[...document.querySelectorAll('.day')];
+ const parents=document.getElementById('parents');
+ const rests=document.getElementById('restaurants');
+ const checklist=document.getElementById('checklist');
+ tabs.forEach(btn=>btn.addEventListener('click',()=>{
+   const f=btn.dataset.filter;
+   tabs.forEach(b=>b.classList.toggle('active',b===btn));
+   if(f==='restaurants'){
+     days.forEach(d=>d.classList.add('hidden')); parents.classList.add('hidden'); checklist.classList.add('hidden'); rests.classList.remove('hidden'); rests.scrollIntoView({behavior:'smooth',block:'start'});
+   } else {
+     rests.classList.remove('hidden'); parents.classList.remove('hidden'); checklist.classList.remove('hidden');
+     days.forEach(d=>d.classList.toggle('hidden',f!=='all' && d.dataset.day!==f));
+     if(f!=='all') document.querySelector(`[data-day="${f}"]`)?.scrollIntoView({behavior:'smooth',block:'start'});
+   }
+ }));
+})();
+</script>
+</body></html>
